@@ -5,18 +5,13 @@ class StringBuilder {
     this.str = str;
   }
   append(str) {
-    this.str += str; //  добавляет символ в конец строки
+    this.str = this.str + str; //  добавляет символ в конец строки
   }
   prepend(str) {
-    this.x = str; //  добавляет символ  в  начало  строки
-    this.x += this.str;
-    this.str = this.x;
+    this.str = str + this.str; //  добавляет символ  в  начало  строки
   }
   pad(str) {
-    this.x = str;
-    this.x += this.str;
-    this.str = this.x;
-    this.str += str; //   добавляет  символ  в  начало  и  в  конец  строки
+    this.str = str + this.str + str; //   добавляет  символ  в  начало  и  в  конец  строки
   }
 
   get value() {

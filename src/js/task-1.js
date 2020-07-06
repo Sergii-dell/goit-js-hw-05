@@ -1,16 +1,15 @@
 "use strict" /* использование последней  версии  js  */;
 
-class Account {
-  constructor(loginEmail) {
-    this.loginEmail = loginEmail;
-  }
+const Account = function Account({ login, email }) {
+  this.login = login;
+  this.email = email;
+};
 
-  getInfo() {
-    console.log(this.loginEmail);
-  }
-}
+Account.prototype.getInfo = function () {
+  console.log(`Login: ${this.login}, Email: ${this.email}`);
+};
 
-console.log(typeof Account.prototype.getInfo); // function
+console.log(Account.prototype.getInfo); // function
 
 const mango = new Account({
   login: "Mangozedog",

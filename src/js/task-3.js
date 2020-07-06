@@ -1,7 +1,7 @@
 "use strict" /* использование последней  версии  js  */;
 
 class Storage {
-  constructor([...items]) {
+  constructor(items) {
     this.items = items;
   }
 
@@ -9,8 +9,11 @@ class Storage {
     this.items.push(items);
   }
 
-  removeItem(items) {
-    this.items = this.items.filter((item) => item !== items);
+  removeItem(item) {
+    let index = this.items.indexOf(item);
+    if (index > -1) {
+      return this.items.splice(index, 1);
+    }
   }
   getItems() {
     return this.items;
